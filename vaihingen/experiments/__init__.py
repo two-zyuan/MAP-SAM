@@ -1,2 +1,0 @@
-"""Independent MulMoSAM ablation experiments."""
-

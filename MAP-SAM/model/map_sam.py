@@ -1,4 +1,4 @@
-"""Top-level MulMoSAM network assembly and forward data flow."""
+"""Top-level MAP-SAM network assembly and forward data flow."""
 
 from __future__ import annotations
 

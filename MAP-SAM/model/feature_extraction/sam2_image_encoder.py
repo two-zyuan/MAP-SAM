@@ -26,7 +26,7 @@ class ImageEncoder(nn.Module):
     Input/Output:
         Image ``[B,3,H,W]`` -> dictionary containing ``backbone_fpn`` and
         matching positional encodings. The configured ``scalp=1`` native path
-        exposes strides 4, 8, and 16, while MulMoSAM accesses the neck directly
+        exposes strides 4, 8, and 16, while MAP-SAM accesses the neck directly
         to retain all four levels.
     """
 

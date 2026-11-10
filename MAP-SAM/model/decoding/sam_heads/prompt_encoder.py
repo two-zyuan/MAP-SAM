@@ -17,7 +17,7 @@ from ...common.position_encoding import PositionEmbeddingRandom
 class PromptEncoder(nn.Module):
     """Encode visual points, boxes, or masks for the SAM2 MaskDecoder.
 
-    MulMoSAM executes only this module's dense visual mask-prompt path.
+    MAP-SAM executes only this module's dense visual mask-prompt path.
 
     Args:
         embed_dim: Prompt embedding width ``C``, currently 256.

@@ -39,7 +39,7 @@ class MaskDecoder(nn.Module):
     Input/Output:
         Image/dense embeddings are ``[B,256,He,We]`` and sparse prompts are
         ``[B,N,256]``. With ``He=We=64``, upscaled mask features are
-        ``[B,32,256,256]`` and masks are ``[B,M,256,256]``. MulMoSAM ignores
+        ``[B,32,256,256]`` and masks are ``[B,M,256,256]``. MAP-SAM ignores
         mask, IoU, and object-score values but captures the 32-channel feature.
     """
 
@@ -258,7 +258,7 @@ class MaskDecoder(nn.Module):
         repeat_image: bool,
         high_res_features: Optional[List[torch.Tensor]] = None,
     ) -> torch.Tensor:
-        """Return only the upscaled decoder feature used by MulMoSAM.
+        """Return only the upscaled decoder feature used by MAP-SAM.
 
         Inputs use native SAM2 shapes: image/dense embeddings ``[B,256,He,We]``,
         image positional encoding ``[1,256,He,We]``, sparse prompts ``[B,N,256]``,

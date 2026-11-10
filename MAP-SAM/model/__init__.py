@@ -1,4 +1,4 @@
-"""MulMoSAM public model API.
+"""MAP-SAM public model API.
 
 Internal modules are grouped by responsibility. Importing from ``model`` or
 ``model.build_model`` keeps callers independent of that internal layout.

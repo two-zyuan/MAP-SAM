@@ -1,4 +1,4 @@
-"""Isolated MulMoSAM ablation architectures built from audited project APIs."""
+"""MAP-SAM C1 model with configurable encoder, prompt, and decoder components."""
 
 from __future__ import annotations
 
@@ -227,7 +227,7 @@ class SingleStreamFRN(nn.Module):
         return self.class_decoder(self.output_decoder(torch.cat((top, sam), dim=1)))
 
 
-class AblationMulMoSAM(nn.Module):
+class MAPSAM(nn.Module):
     """Configurable model preserving the original five-output forward interface."""
 
     def __init__(self, experiment: ExperimentConfig | str, img_size: int = 1024, sam_checkpoint: Path | None = None) -> None:
@@ -342,8 +342,8 @@ class AblationMulMoSAM(nn.Module):
         return logits, output_prompt, diffusion_loss, contrastive, prompt_loss
 
 
-def build_ablation_model(name: str, img_size: int = 1024, sam_checkpoint: Path | None = None) -> AblationMulMoSAM:
+def build_ablation_model(name: str, img_size: int = 1024, sam_checkpoint: Path | None = None) -> MAPSAM:
     config = get_config(name)
     if not config.train:
         raise ValueError(f"{name} is a Full alias, not a trainable ablation model")
-    return AblationMulMoSAM(config, img_size=img_size, sam_checkpoint=sam_checkpoint)
+    return MAPSAM(config, img_size=img_size, sam_checkpoint=sam_checkpoint)

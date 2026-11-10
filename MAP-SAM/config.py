@@ -87,7 +87,7 @@ class TrainingConfig:
     """Stable training policy; CLI flags are reserved for run-time choices."""
 
     # Experiment/checkpoint name used by logging and command-line defaults.
-    net_type: str = "MulMoSAM"
+    net_type: str = "MAP-SAM"
     # Seed for initialization, data order, augmentation, and training noise.
     random_seed: int = 42
     # Seed reset before every validation/test pass for fixed diffusion noise.
