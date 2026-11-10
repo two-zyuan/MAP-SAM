@@ -1,0 +1,14 @@
+{
+  "C1": {
+    "stage": "stage3",
+    "train": true,
+    "modalities": "both",
+    "sca": true,
+    "sra": true,
+    "cross_direction": "bidirectional",
+    "contrastive": "position",
+    "prompt": "diffusion",
+    "decoder": "frn",
+    "description": "Position-aware positives only"
+  }
+}
